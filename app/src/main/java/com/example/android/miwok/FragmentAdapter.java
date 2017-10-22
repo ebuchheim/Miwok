@@ -13,6 +13,8 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+    private String tabTitles[] = new String[] { "Numbers", "Colors", "Family", "Phrases" };
+
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
@@ -24,6 +26,12 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         } else {
             return new PhrasesFragment();
         }
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        // Generate title based on item position
+        return tabTitles[position];
     }
 
     @Override
